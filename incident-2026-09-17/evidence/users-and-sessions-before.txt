@@ -1,0 +1,18 @@
+ID	user_login	user_email	roles	user_registered
+15	access@classiccityconsulting.com	access@classiccityconsulting.com	administrator	2026-09-17 17:53:53
+7	classiccity	access@classiccity.com	administrator	2024-02-07 19:48:50
+2	Laura Lake	LLake@mms-lv.com	administrator	2021-10-25 19:26:45
+11	samson	samson@classiccity.com	administrator	2025-06-27 18:20:37
+13	walbert@mms-lv.com	walbert@mms-lv.com	administrator	2026-06-14 19:03:27
+-- sessions user 2
+token,login_time,expiration_time,ip,ua
+eb4e9ee4cc6780452a8421c477a98d5f9f1d948d3b24cacd67f8efa39e4ac11d,"2026-09-16 20:44:34","2026-09-18 20:44:34",65.153.132.218,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
+3cfc4e0091653dc5a5c46081a04d8d066f6e0e71f5c079e0f41040b27bff100e,"2026-09-16 20:45:06","2026-09-18 20:45:06",65.153.132.218,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
+-- sessions user 15
+token,login_time,expiration_time,ip,ua
+a55b18292cb2731926dae9302da537460469a66cc4a7dae0b8639bef1ad72469,"2026-09-17 17:53:54","2026-10-01 17:53:54",73.82.6.104,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+3ec714fbb0df888f86b8fbaf043bcaa5c916bebeb41a7bd52ef1b972101a46d8,"2026-09-17 18:25:09","2026-09-19 18:25:09",73.82.6.104,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+-- admin_email
+noel@techwoodconsulting.com
+-- new_admin_email
+Error: Could not get 'new_admin_email' option. Does it exist?

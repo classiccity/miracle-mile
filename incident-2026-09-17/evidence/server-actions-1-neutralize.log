@@ -1,0 +1,36 @@
+=== ACTION LOG 1: neutralize (all times UTC) ===
+[2026-09-17 18:48:50] pre-check md5
+80fe1db1ea46b64a4ae1a55c53923c22  wp-content/mu-plugins/asset-cache.php
+80fe1db1ea46b64a4ae1a55c53923c22  wp-content/mu-plugins/asset-cache.php.bak
+[2026-09-17 18:48:50] rm wp-content/mu-plugins/asset-cache.php
+removed 'wp-content/mu-plugins/asset-cache.php'
+[2026-09-17 18:48:50] rm wp-content/mu-plugins/asset-cache.php.bak
+removed 'wp-content/mu-plugins/asset-cache.php.bak'
+[2026-09-17 18:48:50] rm zero-byte remnant wp-content/themes/wp-BKi.php
+removed 'wp-content/themes/wp-BKi.php'
+[2026-09-17 18:48:50] mu-plugins top level now:
+total 88
+-r--r--r--  1 nobody   nogroup  11489 Aug 21 09:47 mu-plugin.php
+-r--r--r--  1 nobody   nogroup    565 Aug 21 09:47 slt-force-strong-passwords.php
+-rw-rw-r--  1 wpe-user wpe-user  1299 Aug 21 09:47 wpe-cache-plugin.php
+-rw-rw-r--  1 wpe-user wpe-user  2258 Aug 21 09:47 wpe-update-source-selector.php
+-rw-rw-r--  1 wpe-user wpe-user 17043 Aug 21 09:47 wpe-wp-sign-on-plugin.php
+-rw-rw-r--  1 wpe-user wpe-user 14814 Aug 21 09:47 wpengine-security-auditor.php
+[2026-09-17 18:48:50] delete malware transients (if any)
+Success: Transient deleted.
+Warning: Transient was not deleted; however, the transient does not appear to exist.
+Success: Transient deleted.
+Warning: Transient was not deleted; however, the transient does not appear to exist.
+[2026-09-17 18:50:14] purge WP Engine page cache + memcached + object cache
+wpe purge called
+Success: The cache was flushed.
+[2026-09-17 18:51:00] must-use plugin list now:
+slt-force-strong-passwords
+wpe-cache-plugin
+wpe-wp-sign-on-plugin
+wpengine-security-auditor
+mu-plugin
+wpe-update-source-selector
+[2026-09-17 18:51:36] marker grep across install (expect nothing):
+(end)
+=== END ACTION LOG 1 ===

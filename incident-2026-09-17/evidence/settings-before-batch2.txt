@@ -1,0 +1,64 @@
+captured 2026-09-17 18:52:35 UTC
+== recovery_keys
+{"0t2m2sCIrRbgda5sHArK8M":{"hashed_key":"$generic$u5nfgWIXo05CXcLBCDNrNOZZ_P_MvStCqKxVR2pI","created_at":1789665100}}
+
+== admin_email
+noel@techwoodconsulting.com
+== new_admin_email
+Error: Could not get 'new_admin_email' option. Does it exist?
+
+== options whose value mentions techwood
+option_name
+admin_email
+sb_instagram_settings
+_wpallexport_session_2_
+limit_login_logged
+wsal_built-in-notifications
+
+
+== wsal_built-in-notifications
+{"daily_summary_notification":false,"daily_email_address":"noel@techwoodconsulting.com","daily_send_empty_summary_emails":false,"weekly_summary_notification":true,"weekly_email_address":"development@classiccity.com","weekly_send_empty_summary_emails":false}
+
+== sb_instagram_settings keys mentioning techwood
+{'email_notification_addresses': 'noel@techwoodconsulting.com'}
+
+== wordfence alertEmails
+name	val
+alertEmails	Walbert@mms-LV.com
+loginSec_lockInvalidUsers	0
+loginSec_maxFailures	20
+other_scanOutside	0
+scansEnabled_plugins	0
+scansEnabled_themes	0
+waf_status	learning-mode
+
+
+== robots.txt (attacker version)
+2026-07-29 18:46:12.026604697 +0000 168 robots.txt
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Moz
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+
+== wp_index_ad.php remnant
+2026-08-15 03:15:27.940133062 +0000 0 wp-content/languages/themes/wp_index_ad.php
+
+== sessions all users
+-- user 2: 2 session(s)
+-- user 7: 0 session(s)
+-- user 10:  session(s)
+-- user 11: 0 session(s)
+-- user 13: 0 session(s)
+-- user 15: 2 session(s)

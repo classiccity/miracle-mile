@@ -1,0 +1,20 @@
+umeta_id	user_id	meta_key	meta_value
+505	14	nickname	adminuser
+506	14	first_name	
+507	14	last_name	
+508	14	description	
+509	14	rich_editing	true
+510	14	syntax_highlighting	true
+511	14	comment_shortcuts	false
+512	14	admin_color	modern
+513	14	use_ssl	0
+514	14	show_admin_bar_front	true
+515	14	locale	
+516	14	wp_capabilities	a:1:{s:13:"administrator";b:1;}
+517	14	wp_user_level	10
+518	14	_yoast_wpseo_profile_updated	1785310035
+519	14	session_tokens	a:1:{s:64:"4f622c38eaadb87c210e220e5807c91d32969f9b3b368b5bdf774f9fe76f4201";a:4:{s:10:"expiration";i:1785523526;s:2:"ip";s:13:"152.233.21.85";s:2:"ua";s:111:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36";s:5:"login";i:1785350726;}}
+520	14	_yoast_wpseo_introductions	a:0:{}
+521	14	gform_recent_forms	a:1:{i:0;s:1:"2";}
+522	14	wp_dashboard_quick_press_last_post_id	6203
+

@@ -1,0 +1,37 @@
+captured 2026-09-17 19:01:06 UTC
+== marker grep across wp-content (expect empty)
+(end)
+== mu-plugins top level
+total 88
+-r--r--r--  1 nobody   nogroup  11489 Aug 21 09:47 mu-plugin.php
+-r--r--r--  1 nobody   nogroup    565 Aug 21 09:47 slt-force-strong-passwords.php
+-rw-rw-r--  1 wpe-user wpe-user  1299 Aug 21 09:47 wpe-cache-plugin.php
+-rw-rw-r--  1 wpe-user wpe-user  2258 Aug 21 09:47 wpe-update-source-selector.php
+-rw-rw-r--  1 wpe-user wpe-user 17043 Aug 21 09:47 wpe-wp-sign-on-plugin.php
+-rw-rw-r--  1 wpe-user wpe-user 14814 Aug 21 09:47 wpengine-security-auditor.php
+== removed paths
+gone: wp-content/mu-plugins/asset-cache.php
+gone: wp-content/mu-plugins/asset-cache.php.bak
+gone: wp-content/themes/wp-BKi.php
+gone: wp-content/languages/themes/wp_index_ad.php
+gone: robots.txt
+gone: .tmb
+== users
+ID	user_login	user_email	roles
+15	access@classiccityconsulting.com	access@classiccityconsulting.com	administrator
+2	Laura Lake	LLake@mms-lv.com	administrator
+11	samson	samson@classiccity.com	administrator
+13	walbert@mms-lv.com	walbert@mms-lv.com	administrator
+== sessions
+user 2: 0
+user 7: 
+user 11: 0
+user 13: 0
+user 15: 2
+== options
+option_name	v
+admin_email	access@classiccityconsulting.com
+
+== bb-theme functions.php
+5ab5cc36cd8bf72b7d016c6e3937b74a  wp-content/themes/bb-theme/functions.php
+101 wp-content/themes/bb-theme/functions.php

@@ -1,0 +1,35 @@
+=== ACTION LOG 2: accounts, notifications, remnants (all times UTC) ===
+[2026-09-17 18:55:05] admin_email: noel@techwoodconsulting.com -> access@classiccityconsulting.com
+Success: Updated 'admin_email' option.
+[2026-09-17 18:55:42] WSAL daily summary address: noel@techwoodconsulting.com -> access@classiccityconsulting.com
+Error: No data exists for key "access@classiccityconsulting.com"
+=== ACTION LOG 2 (continued after WP-CLI syntax abort; admin_email already updated 18:55:05) ===
+[2026-09-17 18:59:51] WSAL daily summary + Instagram Feed notification addresses -> access@classiccityconsulting.com
+wsal=access@classiccityconsulting.com | sbi=access@classiccityconsulting.com
+[2026-09-17 18:59:55] delete WordPress recovery-mode key created 17:11:40 UTC (link emailed to former vendor)
+Success: Deleted 'recovery_keys' option.
+[2026-09-17 18:59:58] delete orphaned usermeta of attacker account user_id 14 'adminuser' (18 rows; evidence: usermeta-user14-adminuser.tsv)
+Success: Query succeeded. Rows affected: 18
+rows remaining for user 14: 0
+[2026-09-17 19:00:01] rm zero-byte remnant wp-content/languages/themes/wp_index_ad.php
+removed 'wp-content/languages/themes/wp_index_ad.php'
+[2026-09-17 19:00:01] rm attacker-written robots.txt (2026-07-29 18:46 UTC; evidence: robots.txt.attacker-version.txt); WordPress now serves its default
+removed 'robots.txt'
+[2026-09-17 19:00:01] rmdir empty elFinder thumbnail dir .tmb (2026-07-29)
+rmdir: removing directory, '.tmb'
+[2026-09-17 19:00:01] destroy all WordPress sessions for users 2,7,11,13 (user 15 = remediation account, kept)
+  user 2: Success: Destroyed all sessions.
+  user 7: Success: Destroyed all sessions.
+  user 11: Success: Destroyed all sessions.
+  user 13: Success: Destroyed all sessions.
+[2026-09-17 19:00:14] purge WPE page cache + memcached + object cache
+purged
+Success: The cache was flushed.
+[2026-09-17 19:00:22] post-state:
+option_name	v
+admin_email	access@classiccityconsulting.com
+
+  user14 meta rows: 0
+3
+  (3 = all three gone)
+=== END ACTION LOG 2 ===
