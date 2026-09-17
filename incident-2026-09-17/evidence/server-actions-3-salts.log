@@ -1,0 +1,30 @@
+=== ACTION LOG 3: rotate WordPress salts (all times UTC) ===
+[2026-09-17 19:14:21] backup wp-config.php to ~/wp-config.php.pre-salt-rotation-2026-09-17 (outside web root; contains secrets, not copied to repo)
+'wp-config.php' -> '/home/wpe-user/wp-config.php.pre-salt-rotation-2026-09-17'
+925fe90a6ef02c8c3292b45f2c6355a3  wp-config.php
+[2026-09-17 19:14:21] old salt fingerprints (md5 of each define line):
+  AUTH_KEY: c181f8712c1b
+  SECURE_AUTH_KEY: c0d7b36487bd
+  LOGGED_IN_KEY: c4c6b8c8582b
+  NONCE_KEY: 572a510b2ad5
+  AUTH_SALT: d29d45671c59
+  SECURE_AUTH_SALT: 06cf505d134e
+  LOGGED_IN_SALT: e5fe60863a7f
+  NONCE_SALT: c5bf9f5c75b4
+[2026-09-17 19:14:21] wp config shuffle-salts
+Success: Shuffled the salt keys.
+[2026-09-17 19:14:22] new salt fingerprints:
+  AUTH_KEY: 9d8bb28721c1
+  SECURE_AUTH_KEY: 72c1b2527c39
+  LOGGED_IN_KEY: c9a6eb2a9dc7
+  NONCE_KEY: cca0399e7e99
+  AUTH_SALT: 50bf240b980a
+  SECURE_AUTH_SALT: ce92689633b1
+  LOGGED_IN_SALT: 0b6aeeb9adb8
+  NONCE_SALT: 1cbf31a01983
+[2026-09-17 19:14:22] sanity: wp-config parses and site responds
+No syntax errors detected in wp-config.php
+Miracle Mile Shops
+b58784021c18e9995abfbce15b56491f  wp-config.php
+[2026-09-17 19:14:28] scan still running? wf_scanRunning=1789671738
+=== END ACTION LOG 3 ===

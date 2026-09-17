@@ -141,6 +141,15 @@ Verification (18:50 UTC and again 19:00 UTC): homepage HTML contains 0 occurrenc
 
 Note on #6: the first read-back after the update showed the old value because memcached served a stale copy; the database row was correct, and after the cache flush every read returns the new address.
 
+### 4.3b Batch 3 — WordPress salt rotation (19:14:21–19:14:28 UTC, approved by Chris mid-scan)
+
+| # | Change | Before | After |
+|---|---|---|---|
+| 16 | `cp wp-config.php ~/wp-config.php.pre-salt-rotation-2026-09-17` (backup outside the web root; contains secrets, not in this repo) | | backup exists in the SSH user's home |
+| 17 | `wp config shuffle-salts` — all eight AUTH/SECURE_AUTH/LOGGED_IN/NONCE keys and salts regenerated | wp-config.php md5 `925fe90a…` | md5 `b5878402…`; per-line fingerprints in `evidence/server-actions-3-salts.log` |
+
+Effect: every existing WordPress login cookie (including any minted through the backdoor before 18:48 UTC) is invalid. Verified: `php -l` clean, `wp option get blogname` answers, homepage 200. The Wordfence scan running at the time was unaffected (it does not use cookies).
+
 ### 4.4 Changes made by Chris LaFay directly (observed in the audit log, not by this session)
 
 | UTC | Change |
@@ -169,7 +178,7 @@ Note on #6: the first read-back after the update showed the old value because me
 Ordered by urgency.
 
 1. **Reset every WordPress password** (users 2, 7, 11, 13, 15) and enable 2FA. `walbert@mms-lv.com` has a Wordfence 2FA secret that was never verified, so 2FA is not active on it.
-2. **Rotate the WordPress salts** in `wp-config.php` (WP Engine portal → or `wp config shuffle-salts`). This invalidates every cookie, including any minted through the backdoor before removal.
+2. ~~Rotate the WordPress salts~~ — done 19:14 UTC (change #17).
 3. **In the WP Engine User Portal:** list and remove unrecognized SFTP users and SSH keys; reset the SFTP password; check the portal's user list for Techwood or other former-vendor logins; rotate the WPE API key exposed in `_wpeprivate/config.json`.
 4. **Ask WP Engine support for logs** (they are not readable from SSH): SFTP/SSH auth logs for 2026-09-17 14:50–17:10 UTC, web access logs for 2026-09-17 14:30–17:30 UTC, and for 2026-07-29 07:00–08:00 and 18:30–19:00 UTC. The 15:00 mu-plugin write and the ~17:04 theme write left no trace in WordPress; only the host's logs can show the channel.
 5. **Wordfence:** WAF is in learning mode (not blocking); plugin and theme checksum scans are disabled; "scan outside WordPress" is off; lockout threshold is 20 failures with invalid usernames not locked. Turn the WAF to Enabled and Protecting, enable all three scans, tighten lockouts, then run a full scan.
@@ -222,7 +231,7 @@ Known-good IPs: 65.153.132.218 (Laura Lake, client), 73.82.6.104 and 24.99.32.21
 | `usermeta-user14-adminuser.tsv` | attacker admin account metadata (deleted from the site in change #10) |
 | `users-and-sessions-before.txt`, `settings-before-batch2.txt`, `server-file-stats-before.txt`, `homepage-head-before.html` | pre-change state |
 | `robots.txt.attacker-version.txt` | attacker's `robots.txt` (removed in change #12) |
-| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log` | timestamped output of every command that changed the site |
+| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log` | timestamped output of every command that changed the site |
 | `server-file-stats-after.txt`, `homepage-and-endpoints-after.txt` | post-change verification |
 
 The malware files are stored with a `.txt` extension so they can never execute from this repo.
