@@ -1,5 +1,5 @@
 # Miracle Mile Shops — Build Log
-Version: 1.7
+Version: 1.8
 
 Repo for the miraclemileshopslv.com WordPress site (WP Engine install `miraclemilesh`).
 `themes/` holds the Beaver Builder parent and child themes as downloaded from the live site;
@@ -30,7 +30,9 @@ Site went down with a PHP parse error; cause was an attacker-injected "Asset Cac
 - [x] 1.7 Rotate WordPress salts — done 2026-09-17 19:14 UTC via `wp config shuffle-salts`, backup of
   wp-config.php kept in the SSH home dir. All cookies invalidated. Wordfence scan (running with all
   checks enabled) flagged only four modified plugin files, all explained as Sucuri edits / build metadata.
-- [ ] 1.8 Hardening follow-ups (owner: Chris) — password resets + 2FA, WPE portal
+- [x] 1.8 Invalidate all user passwords — done 2026-09-17 19:33 UTC. Random passwords set for users 2,
+  11, 13, 15 (user 7 already deleted by Chris); users reset their own via lost-password. Not emailed by us.
+- [ ] 1.9 Hardening follow-ups (owner: Chris) — 2FA for all admins, WPE portal
   SFTP/SSH key review and log request, Wordfence WAF out of learning mode + checksum scans on,
   replace Sucuri-touched premium plugin files, remove inactive plugins/themes, client PII
   notification decision. Details in `INCIDENT-REPORT.md` §5.

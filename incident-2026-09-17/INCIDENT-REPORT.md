@@ -150,6 +150,14 @@ Note on #6: the first read-back after the update showed the old value because me
 
 Effect: every existing WordPress login cookie (including any minted through the backdoor before 18:48 UTC) is invalid. Verified: `php -l` clean, `wp option get blogname` answers, homepage 200. The Wordfence scan running at the time was unaffected (it does not use cookies).
 
+### 4.3c Batch 4 — invalidate all user passwords (19:32:55–19:33:52 UTC, approved by Chris)
+
+| # | Change | Before | After |
+|---|---|---|---|
+| 18 | `wp user update <id> --user_pass=<random 32 chars>` for users 2 (Laura Lake), 11 (samson), 13 (walbert@mms-lv.com), 15 (access@classiccityconsulting.com). User 7 (classiccity) had already been deleted by Chris. The random passwords were generated on the server and not recorded anywhere. | old hashes | new hashes (prefixes logged in `evidence/server-actions-4-passwords.log`) |
+
+Users were told in advance and will set their own passwords via "Lost your password?" on the login page (`wp-login.php?action=lostpassword`, verified reachable). WordPress's own "password changed" notice may have been emailed to each user by the update. Chris's access@ account can also re-enter via the WP Engine portal one-click login.
+
 ### 4.4 Changes made by Chris LaFay directly (observed in the audit log, not by this session)
 
 | UTC | Change |
@@ -177,7 +185,7 @@ Effect: every existing WordPress login cookie (including any minted through the 
 
 Ordered by urgency.
 
-1. **Reset every WordPress password** (users 2, 7, 11, 13, 15) and enable 2FA. `walbert@mms-lv.com` has a Wordfence 2FA secret that was never verified, so 2FA is not active on it.
+1. ~~Reset every WordPress password~~ — done 19:33 UTC (change #18); users set their own via the lost-password link. Still to do: **enable 2FA** for every administrator. `walbert@mms-lv.com` has a Wordfence 2FA secret that was never verified, so 2FA is not active on it.
 2. ~~Rotate the WordPress salts~~ — done 19:14 UTC (change #17).
 3. **In the WP Engine User Portal:** list and remove unrecognized SFTP users and SSH keys; reset the SFTP password; check the portal's user list for Techwood or other former-vendor logins; rotate the WPE API key exposed in `_wpeprivate/config.json`.
 4. **Ask WP Engine support for logs** (they are not readable from SSH): SFTP/SSH auth logs for 2026-09-17 14:50–17:10 UTC, web access logs for 2026-09-17 14:30–17:30 UTC, and for 2026-07-29 07:00–08:00 and 18:30–19:00 UTC. The 15:00 mu-plugin write and the ~17:04 theme write left no trace in WordPress; only the host's logs can show the channel.
@@ -231,7 +239,7 @@ Known-good IPs: 65.153.132.218 (Laura Lake, client), 73.82.6.104 and 24.99.32.21
 | `usermeta-user14-adminuser.tsv` | attacker admin account metadata (deleted from the site in change #10) |
 | `users-and-sessions-before.txt`, `settings-before-batch2.txt`, `server-file-stats-before.txt`, `homepage-head-before.html` | pre-change state |
 | `robots.txt.attacker-version.txt` | attacker's `robots.txt` (removed in change #12) |
-| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log` | timestamped output of every command that changed the site |
+| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log`, `server-actions-4-passwords.log` | timestamped output of every command that changed the site |
 | `server-file-stats-after.txt`, `homepage-and-endpoints-after.txt` | post-change verification |
 
 The malware files are stored with a `.txt` extension so they can never execute from this repo.
