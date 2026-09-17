@@ -1,0 +1,18 @@
+=== ACTION LOG 6: remove WP File Manager leftovers (UTC) ===
+[2026-09-17 19:46:23] before:
+  2026-07-29     4096 wp-content/uploads/wp-file-manager-pro
+  2026-07-29     4096 wp-content/uploads/wp-file-manager-pro/fm_backup
+  2026-07-29       66 wp-content/uploads/wp-file-manager-pro/fm_backup/.htaccess
+  2026-07-29        0 wp-content/uploads/wp-file-manager-pro/fm_backup/index.html
+  option fm_key: 2eS9gK4mZua1wLovGOcbI6BCj
+  table wp_wpfm_backup rows: 0
+[2026-09-17 19:46:29] rm -r wp-content/uploads/wp-file-manager-pro
+removed 'wp-content/uploads/wp-file-manager-pro/fm_backup/.htaccess'
+removed 'wp-content/uploads/wp-file-manager-pro/fm_backup/index.html'
+removed directory 'wp-content/uploads/wp-file-manager-pro/fm_backup'
+removed directory 'wp-content/uploads/wp-file-manager-pro'
+[2026-09-17 19:46:29] wp option delete fm_key
+Success: Deleted 'fm_key' option.
+[2026-09-17 19:46:34] DROP TABLE wp_wpfm_backup (0 rows)
+[2026-09-17 19:46:35] after: dir exists? no | fm_key: Error: Could not get 'fm_key' option. Does it exist? | tables matching wpfm: 0
+=== END ACTION LOG 6 ===

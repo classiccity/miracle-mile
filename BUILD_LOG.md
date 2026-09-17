@@ -1,5 +1,5 @@
 # Miracle Mile Shops — Build Log
-Version: 1.8
+Version: 1.10
 
 Repo for the miraclemileshopslv.com WordPress site (WP Engine install `miraclemilesh`).
 `themes/` holds the Beaver Builder parent and child themes as downloaded from the live site;
@@ -32,7 +32,14 @@ Site went down with a PHP parse error; cause was an attacker-injected "Asset Cac
   checks enabled) flagged only four modified plugin files, all explained as Sucuri edits / build metadata.
 - [x] 1.8 Invalidate all user passwords — done 2026-09-17 19:33 UTC. Random passwords set for users 2,
   11, 13, 15 (user 7 already deleted by Chris); users reset their own via lost-password. Not emailed by us.
-- [ ] 1.9 Hardening follow-ups (owner: Chris) — 2FA for all admins, WPE portal
+- [x] 1.9 Replace "Create And Assign Categories For Pages" plugin with child-theme code — done
+  2026-09-17 19:52 UTC. Two `register_taxonomy_for_object_type` calls appended to
+  `themes/bb-theme-child/functions.php`, uploaded, plugin deactivated and deleted, tests pass
+  (taxonomies on page, categorized pages keep their terms, metabox registered). Archive-mixing
+  behavior intentionally not reproduced.
+- [x] 1.10 Remove WP File Manager leftovers — done 2026-09-17 19:46 UTC. Uploads folder, `fm_key`
+  option and empty `wp_wpfm_backup` table removed.
+- [ ] 1.11 Hardening follow-ups (owner: Chris) — 2FA for all admins, WPE portal
   SFTP/SSH key review and log request, Wordfence WAF out of learning mode + checksum scans on,
   replace Sucuri-touched premium plugin files, remove inactive plugins/themes, client PII
   notification decision. Details in `INCIDENT-REPORT.md` §5.

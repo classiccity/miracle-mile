@@ -1,0 +1,41 @@
+=== ACTION LOG 5: replace page-category plugin with child-theme code (UTC) ===
+[2026-09-17 19:45:17] upload themes/bb-theme-child/functions.php (repo md5 577f251d45b633cd2b989e0f0035627f) to server
+[2026-09-17 19:45:44] server file now: 577f251d45b633cd2b989e0f0035627f  wp-content/themes/bb-theme-child/functions.php
+No syntax errors detected in wp-content/themes/bb-theme-child/functions.php
+[2026-09-17 19:45:44] site check: 200 | taxonomies on page (plugin still active): category,post_tag
+[2026-09-17 19:47:21] categorized pages before:
+ID	post_title	cats
+827	Add-on Packs	Promotions
+5650	Dining Guide	Sit-Down Restaurants,Quick Serve Restaurants,Bars,Dine and Drink,Miracle Eats Food Court
+5973	Space A001	Sit-Down Restaurants,Dine and Drink
+
+[2026-09-17 19:47:23] wp plugin deactivate create-and-assign-categories-for-pages
+Success: Deactivated 1 of 1 plugins.
+[2026-09-17 19:47:47] TEST 1 (plugin inactive): taxonomies on page = category,post_tag | category object_types = post,jobs,shops,entertainment,coupons,dine-drink,sales-promotions,page | show_ui = yes
+[2026-09-17 19:48:38] TEST 2 (plugin inactive): page 49 'Dine and Drink' terms via WP API:
+term_id	name
+[2026-09-17 19:48:52] TEST 3 (plugin inactive): BB grid query for pages in category 7,8,9,10,11 returns: 0 page(s)
+[2026-09-17 19:49:05] wp plugin delete create-and-assign-categories-for-pages
+Success: Deleted 1 of 1 plugins.
+[2026-09-17 19:49:20] TEST 4 (plugin deleted): taxonomies on page = category,post_tag | plugin dir exists? no
+[2026-09-17 19:49:34] purge caches
+purgedSuccess: The cache was flushed.
+[2026-09-17 19:50:01] TEST 5: homepage 200 | dine-and-drink page 200 | php lint child theme: No syntax errors detected in wp-content/themes/bb-theme-child/functions.php
+=== END ACTION LOG 5 ===
+=== ACTION LOG 5 addendum: corrected tests (plugin deleted, child-theme code only) ===
+[2026-09-17 19:50:37] term ids used by the BB grids (7,8,9,10,11,17):
+term_id	name	taxonomy
+7	Apparel	category
+8	Fine Art &amp; Collectibles	category
+9	Health &amp; Beauty	category
+10	Home Decor	category
+11	Accessories	category
+17	Footwear	category
+
+[2026-09-17 19:50:38] TEST 2 (corrected): categories on the three categorized pages via the WordPress API:
+  page 827: Promotions,
+  page 5650: Bars,Dine and Drink,Miracle Eats Food Court,Quick Serve Restaurants,Sit-Down Restaurants,
+  page 5973: Dine and Drink,Sit-Down Restaurants,
+[2026-09-17 19:51:40] TEST 3 (corrected): WP_Query page + category, as the BB grids run it: 7,8,9,10,11 -> 0 page(s):  | 11,7,8,17,9,10 -> 0 page(s): 
+[2026-09-17 19:52:10] TEST 6: category admin column/metabox registered for pages: yes
+=== END ADDENDUM ===

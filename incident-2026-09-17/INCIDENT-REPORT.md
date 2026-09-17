@@ -158,6 +158,26 @@ Effect: every existing WordPress login cookie (including any minted through the 
 
 Users were told in advance and will set their own passwords via "Lost your password?" on the login page (`wp-login.php?action=lostpassword`, verified reachable). WordPress's own "password changed" notice may have been emailed to each user by the update. Chris's access@ account can also re-enter via the WP Engine portal one-click login.
 
+### 4.3d Batch 5 — replace the abandoned page-category plugin with child-theme code (19:45–19:52 UTC, approved by Chris)
+
+| # | Change | Before | After |
+|---|---|---|---|
+| 19 | `wp-content/themes/bb-theme-child/functions.php`: appended an `init` hook that calls `register_taxonomy_for_object_type()` for `category` and `post_tag` on `page` (backup of the previous file at `~/bb-theme-child-functions.php.pre-2026-09-17` in the SSH home; repo copy committed) | md5 `fefe8f5f…` | md5 `577f251d…`, `php -l` clean |
+| 20 | `wp plugin deactivate` then `wp plugin delete create-and-assign-categories-for-pages` (1.2.1, last updated 2024-01, flagged abandoned by Wordfence) | active | directory removed |
+| 21 | WP Engine page cache + memcached purge, object cache flush | | purged |
+
+Tests after deletion (all in `evidence/server-actions-5-page-categories.log`): `get_object_taxonomies('page')` = category, post_tag; the category taxonomy's object types include `page` with `show_ui` on; the three categorized pages (827 Add-on Packs, 5650 Dining Guide, 5973 Space A001) return their categories through the WordPress API; homepage and the Dine and Drink page return 200. The plugin's second feature (mixing pages into category archive URLs) was deliberately not reproduced. The two saved Beaver Builder templates that filter pages by shop categories (IDs 145 "Internal", 589 "Shops Grid") matched zero pages both before and after, since no page carries those categories; they are dormant.
+
+### 4.3e Batch 6 — remove WP File Manager leftovers (19:46:23–19:46:35 UTC, approved by Chris)
+
+| # | Change | Before | After |
+|---|---|---|---|
+| 22 | `rm -r wp-content/uploads/wp-file-manager-pro/` (2026-07-29, the attacker's file-manager install; contained only an empty `fm_backup/` with a protective `.htaccess` and blank `index.html`) | present | removed |
+| 23 | `wp option delete fm_key` (WP File Manager's stored key) | present | deleted |
+| 24 | `DROP TABLE wp_wpfm_backup` (WP File Manager's backup table, 0 rows) | present | dropped |
+
+The web-root `.tmb` elFinder folder from the same plugin was already removed in batch 2 (#13).
+
 ### 4.4 Changes made by Chris LaFay directly (observed in the audit log, not by this session)
 
 | UTC | Change |
@@ -175,7 +195,7 @@ Users were told in advance and will set their own passwords via "Lost your passw
 ### 4.6 Not changed (deliberately)
 
 - `.sucuriquarantine/` (web root) — kept as the only record of the July payloads. Protected by `deny from all`. Delete after the report is finalized.
-- `wp-content/uploads/wp-file-manager-pro/` — empty remnant, harmless; delete at leisure.
+- ~~`wp-content/uploads/wp-file-manager-pro/`~~ — removed in batch 6.
 - `wp-content/mysql.sql` — WP Engine's own backup artifact.
 - Wordfence configuration, user passwords, WordPress salts, WP Engine SFTP users/SSH keys, inactive plugins and themes — see §5.
 
@@ -191,7 +211,7 @@ Ordered by urgency.
 4. **Ask WP Engine support for logs** (they are not readable from SSH): SFTP/SSH auth logs for 2026-09-17 14:50–17:10 UTC, web access logs for 2026-09-17 14:30–17:30 UTC, and for 2026-07-29 07:00–08:00 and 18:30–19:00 UTC. The 15:00 mu-plugin write and the ~17:04 theme write left no trace in WordPress; only the host's logs can show the channel.
 5. **Wordfence:** WAF is in learning mode (not blocking); plugin and theme checksum scans are disabled; "scan outside WordPress" is off; lockout threshold is 20 failures with invalid usernames not locked. Turn the WAF to Enabled and Protecting, enable all three scans, tighten lockouts, then run a full scan.
 6. **Replace the Sucuri-touched premium plugin files from pristine copies:** `bbpowerpack` (five files dated 2026-08-15 04:12), plus re-install `header-footer-code-manager` and `wp-all-export` from wordpress.org so checksums match again.
-7. **Remove attack surface:** delete inactive plugins (Advanced Custom Fields free, Akismet, Genesis Blocks) and the inactive Genesis Block Theme; keep Twenty Twenty-Five as the WordPress fallback. Update Google Language Translator (6.0.20 → 7.0.1, flagged by Wordfence) and replace the abandoned "Create and Assign Categories for Pages" plugin. Disable WP Engine Site Migration's remote connection or regenerate its key.
+7. **Remove attack surface:** delete inactive plugins (Advanced Custom Fields free, Akismet, Genesis Blocks) and the inactive Genesis Block Theme; keep Twenty Twenty-Five as the WordPress fallback. Update Google Language Translator (6.0.20 → 7.0.1, flagged by Wordfence). ~~Replace the abandoned "Create and Assign Categories for Pages" plugin~~ (done, change #19–20). Both Instagram plugins (Insta Gallery, Instagram Feed) render on no live page, widget or template part and can be deleted; WP All Import/Export (last used 2022) and WordPress Importer likewise. Disable WP Engine Site Migration's remote connection or regenerate its key.
 8. **Client notification decision:** the attacker admin account opened the Gravity Forms "Coupon Book Access" admin (≈16,150 entries of subscriber PII) on 2026-07-29, and the September script harvested visitors' cookies and storage for ~3 hours. Miracle Mile Shops should decide whether either rises to a notification obligation.
 9. **Confirm with the client:** was "dprather" ever a user (a botnet ran a targeted attack on that username on 2026-08-20)? Is the "Jules" chatbot (chat.satis.fi, HFCM snippets 4–5) theirs?
 10. After the above, delete `.sucuriquarantine/`, `uploads/wp-file-manager-pro/`, and consider `DISALLOW_FILE_EDIT` in `wp-config.php`.
@@ -239,7 +259,7 @@ Known-good IPs: 65.153.132.218 (Laura Lake, client), 73.82.6.104 and 24.99.32.21
 | `usermeta-user14-adminuser.tsv` | attacker admin account metadata (deleted from the site in change #10) |
 | `users-and-sessions-before.txt`, `settings-before-batch2.txt`, `server-file-stats-before.txt`, `homepage-head-before.html` | pre-change state |
 | `robots.txt.attacker-version.txt` | attacker's `robots.txt` (removed in change #12) |
-| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log`, `server-actions-4-passwords.log` | timestamped output of every command that changed the site |
+| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log`, `server-actions-4-passwords.log`, `server-actions-5-page-categories.log`, `server-actions-6-wp-file-manager-leftovers.log` | timestamped output of every command that changed the site |
 | `server-file-stats-after.txt`, `homepage-and-endpoints-after.txt` | post-change verification |
 
 The malware files are stored with a `.txt` extension so they can never execute from this repo.
