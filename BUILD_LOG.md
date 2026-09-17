@@ -1,5 +1,5 @@
 # Miracle Mile Shops — Build Log
-Version: 1.10
+Version: 1.11
 
 Repo for the miraclemileshopslv.com WordPress site (WP Engine install `miraclemilesh`).
 `themes/` holds the Beaver Builder parent and child themes as downloaded from the live site;
@@ -39,7 +39,10 @@ Site went down with a PHP parse error; cause was an attacker-injected "Asset Cac
   behavior intentionally not reproduced.
 - [x] 1.10 Remove WP File Manager leftovers — done 2026-09-17 19:46 UTC. Uploads folder, `fm_key`
   option and empty `wp_wpfm_backup` table removed.
-- [ ] 1.11 Hardening follow-ups (owner: Chris) — 2FA for all admins, WPE portal
+- [x] 1.11 Wordfence hardening — done 2026-09-17 20:02 UTC after the full scan (all checks on) came back
+  clean apart from explained items. WAF switched from learning mode to Enabled and Protecting (needed
+  `WFWAF_ALWAYS_ALLOW_FILE_WRITING` for the CLI write), invalid-username lockout on.
+- [ ] 1.12 Hardening follow-ups (owner: Chris) — 2FA for all admins, WPE portal
   SFTP/SSH key review and log request, Wordfence WAF out of learning mode + checksum scans on,
   replace Sucuri-touched premium plugin files, remove inactive plugins/themes, client PII
   notification decision. Details in `INCIDENT-REPORT.md` §5.

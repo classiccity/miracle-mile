@@ -178,6 +178,17 @@ Tests after deletion (all in `evidence/server-actions-5-page-categories.log`): `
 
 The web-root `.tmb` elFinder folder from the same plugin was already removed in batch 2 (#13).
 
+### 4.3f Batch 7 — Wordfence hardening after the full scan (19:55–20:02 UTC, approved by Chris once the scan finished)
+
+The full scan Chris started with all checks enabled completed at 19:39 UTC: 56,151 files, 31 plugins, 4 themes, 176 posts, 50,501 URLs, in 37 minutes. Malware-signature, blocklist-URL, core, theme, known-malware, public-config, quarantine, weak-password and site-option phases all passed. Seven issues, all accounted for: four "modified plugin file" items (two Sucuri cleaner edits, two Genesis Blocks build-metadata differences, all diffed against official releases), the Google Language Translator update, the abandoned page-category plugin (since removed), and the access@ administrator created via the WPE portal (expected).
+
+| # | Change | Before | After |
+|---|---|---|---|
+| 25 | Wordfence WAF status (`wflogs/config.php` `wafStatus`, plus the `waf_status` mirror in `wp_wfconfig`) — learning mode had a grace period set to auto-end 2026-09-23 | `learning-mode` | `enabled` (Enabled and Protecting), grace period cleared |
+| 26 | `loginSec_lockInvalidUsers` (lock out logins that use a username that does not exist) | 0 | 1 |
+
+Note: Wordfence refuses to write its WAF config from the command line unless `WFWAF_ALWAYS_ALLOW_FILE_WRITING` is defined, so the first two attempts changed only the wp_options mirror; the log shows all three attempts. The final write was verified from a fresh process and on disk (file mtime 20:02:18 UTC). Chris had already tightened the other login settings from the Wordfence UI earlier in the session (3 failures, 12-hour lockout, breached-password check, application passwords disabled, author scanning disabled). Homepage, Dine and Drink, coupon page and wp-login all return 200 after the change. External enforcement proof was not possible: test probes (an XSS string and a SQL-injection string) returned 403 from WP Engine's own edge rules before reaching WordPress, so Wordfence never saw them; the state on disk is identical to what the Wordfence UI writes when "Enabled and Protecting" is chosen.
+
 ### 4.4 Changes made by Chris LaFay directly (observed in the audit log, not by this session)
 
 | UTC | Change |
@@ -209,7 +220,7 @@ Ordered by urgency.
 2. ~~Rotate the WordPress salts~~ — done 19:14 UTC (change #17).
 3. **In the WP Engine User Portal:** list and remove unrecognized SFTP users and SSH keys; reset the SFTP password; check the portal's user list for Techwood or other former-vendor logins; rotate the WPE API key exposed in `_wpeprivate/config.json`.
 4. **Ask WP Engine support for logs** (they are not readable from SSH): SFTP/SSH auth logs for 2026-09-17 14:50–17:10 UTC, web access logs for 2026-09-17 14:30–17:30 UTC, and for 2026-07-29 07:00–08:00 and 18:30–19:00 UTC. The 15:00 mu-plugin write and the ~17:04 theme write left no trace in WordPress; only the host's logs can show the channel.
-5. **Wordfence:** WAF is in learning mode (not blocking); plugin and theme checksum scans are disabled; "scan outside WordPress" is off; lockout threshold is 20 failures with invalid usernames not locked. Turn the WAF to Enabled and Protecting, enable all three scans, tighten lockouts, then run a full scan.
+5. ~~Wordfence~~ — done (changes #25–26 plus Chris's UI changes): WAF Enabled and Protecting, plugin/theme/outside-WordPress scans on, 3-failure lockout, invalid usernames locked, full scan clean.
 6. **Replace the Sucuri-touched premium plugin files from pristine copies:** `bbpowerpack` (five files dated 2026-08-15 04:12), plus re-install `header-footer-code-manager` and `wp-all-export` from wordpress.org so checksums match again.
 7. **Remove attack surface:** delete inactive plugins (Advanced Custom Fields free, Akismet, Genesis Blocks) and the inactive Genesis Block Theme; keep Twenty Twenty-Five as the WordPress fallback. Update Google Language Translator (6.0.20 → 7.0.1, flagged by Wordfence). ~~Replace the abandoned "Create and Assign Categories for Pages" plugin~~ (done, change #19–20). Both Instagram plugins (Insta Gallery, Instagram Feed) render on no live page, widget or template part and can be deleted; WP All Import/Export (last used 2022) and WordPress Importer likewise. Disable WP Engine Site Migration's remote connection or regenerate its key.
 8. **Client notification decision:** the attacker admin account opened the Gravity Forms "Coupon Book Access" admin (≈16,150 entries of subscriber PII) on 2026-07-29, and the September script harvested visitors' cookies and storage for ~3 hours. Miracle Mile Shops should decide whether either rises to a notification obligation.
@@ -259,7 +270,7 @@ Known-good IPs: 65.153.132.218 (Laura Lake, client), 73.82.6.104 and 24.99.32.21
 | `usermeta-user14-adminuser.tsv` | attacker admin account metadata (deleted from the site in change #10) |
 | `users-and-sessions-before.txt`, `settings-before-batch2.txt`, `server-file-stats-before.txt`, `homepage-head-before.html` | pre-change state |
 | `robots.txt.attacker-version.txt` | attacker's `robots.txt` (removed in change #12) |
-| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log`, `server-actions-4-passwords.log`, `server-actions-5-page-categories.log`, `server-actions-6-wp-file-manager-leftovers.log` | timestamped output of every command that changed the site |
+| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log`, `server-actions-4-passwords.log`, `server-actions-5-page-categories.log`, `server-actions-6-wp-file-manager-leftovers.log`, `server-actions-7-wordfence.log` | timestamped output of every command that changed the site |
 | `server-file-stats-after.txt`, `homepage-and-endpoints-after.txt` | post-change verification |
 
 The malware files are stored with a `.txt` extension so they can never execute from this repo.
