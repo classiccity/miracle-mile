@@ -189,6 +189,16 @@ The full scan Chris started with all checks enabled completed at 19:39 UTC: 56,1
 
 Note: Wordfence refuses to write its WAF config from the command line unless `WFWAF_ALWAYS_ALLOW_FILE_WRITING` is defined, so the first two attempts changed only the wp_options mirror; the log shows all three attempts. The final write was verified from a fresh process and on disk (file mtime 20:02:18 UTC). Chris had already tightened the other login settings from the Wordfence UI earlier in the session (3 failures, 12-hour lockout, breached-password check, application passwords disabled, author scanning disabled). Homepage, Dine and Drink, coupon page and wp-login all return 200 after the change. External enforcement proof was not possible: test probes (an XSS string and a SQL-injection string) returned 403 from WP Engine's own edge rules before reaching WordPress, so Wordfence never saw them; the state on disk is identical to what the Wordfence UI writes when "Enabled and Protecting" is chosen.
 
+### 4.3g Batch 8 — replace Custom Post Type UI with child-theme code; split functions.php into includes (20:09–20:30 UTC, approved by Chris)
+
+| # | Change | Before | After |
+|---|---|---|---|
+| 27 | Child theme restructured: `functions.php` is now setup plus a list of includes; behavior moved unchanged into `inc/theme-options.php` (existing), `inc/post-types.php` (new), `inc/page-taxonomies.php`, `inc/acf-readonly-fields.php`, `inc/gravity-forms-coupon-counter.php` (server backup `~/bb-theme-child.pre-cptui-2026-09-17.tgz`; all files in the repo) | one 108-line functions.php | loader + 5 include files, all `php -l` clean |
+| 28 | `inc/post-types.php` registers the 8 custom post types (jobs, shops, entertainment, press_releases, in_the_news, coupons, dine-drink, sales-promotions) with the exact arguments Custom Post Type UI passed at runtime, captured through the `register_post_type_args` filter (`evidence/cptui-runtime-args.json`). The plugin's own "Get Code" export was tried first and rejected because it omits labels the plugin computes at runtime. | registered by plugin | registered by child theme; snapshot diff of all 14 custom post types and 10 taxonomies: **0 differences** (`evidence/registered-types-before.json`, `-after.json`) |
+| 29 | `wp plugin deactivate` then `wp plugin delete custom-post-type-ui` (1.19.3); `wp rewrite flush --hard`; caches purged. Its `cptui_post_types` option was left in the database as a fallback record. | active | removed |
+
+Tests with the plugin deleted (all in `evidence/server-actions-8-cptui.log`): one published item per post type returns 200 at its pretty permalink (e.g. `/shops/vegas/`, `/dine-drink/teamo-boba-dessert/`), all five archives return 200, the REST endpoint `wp/v2/shops` returns 200, homepage and Dine and Drink page return 200, all eight types appear in the admin menu list. One test defect during the run is noted in the log (a malformed cache-buster on `?p=` URLs produced false 404s; re-run with pretty permalinks passed).
+
 ### 4.4 Changes made by Chris LaFay directly (observed in the audit log, not by this session)
 
 | UTC | Change |
@@ -270,7 +280,7 @@ Known-good IPs: 65.153.132.218 (Laura Lake, client), 73.82.6.104 and 24.99.32.21
 | `usermeta-user14-adminuser.tsv` | attacker admin account metadata (deleted from the site in change #10) |
 | `users-and-sessions-before.txt`, `settings-before-batch2.txt`, `server-file-stats-before.txt`, `homepage-head-before.html` | pre-change state |
 | `robots.txt.attacker-version.txt` | attacker's `robots.txt` (removed in change #12) |
-| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log`, `server-actions-4-passwords.log`, `server-actions-5-page-categories.log`, `server-actions-6-wp-file-manager-leftovers.log`, `server-actions-7-wordfence.log` | timestamped output of every command that changed the site |
+| `server-actions-1-neutralize.log`, `server-actions-2-accounts-and-remnants.log`, `server-actions-3-salts.log`, `server-actions-4-passwords.log`, `server-actions-5-page-categories.log`, `server-actions-6-wp-file-manager-leftovers.log`, `server-actions-7-wordfence.log`, `server-actions-8-cptui.log` | timestamped output of every command that changed the site |
 | `server-file-stats-after.txt`, `homepage-and-endpoints-after.txt` | post-change verification |
 
 The malware files are stored with a `.txt` extension so they can never execute from this repo.

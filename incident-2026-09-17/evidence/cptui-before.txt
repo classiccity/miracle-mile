@@ -1,0 +1,332 @@
+== cptui options (raw json)
+{"jobs":{"name":"jobs","label":"Jobs","singular_label":"Job","description":"","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"false","has_archive_string":"","exclude_from_search":"false","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"6","show_in_menu":"true","show_in_menu_string":"","menu_icon":"","supports":["title","custom-fields"],"taxonomies":["category"],"labels":{"menu_name":"Jobs","all_items":"All Jobs","add_new_item":"Add New Job","edit_item":"Edit Job","new_item":"New Job","view_item":"View Job","view_items":"View Jobs","search_items":"Search Jobs","not_found":"No Jobs Found","add_new":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""},"shops":{"name":"shops","label":"Shops","singular_label":"Shop","description":"","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"true","has_archive_string":"","exclude_from_search":"false","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"","show_in_menu":"true","show_in_menu_string":"","menu_icon":"dashicons-cart","supports":["title","thumbnail","custom-fields"],"taxonomies":["category"],"labels":{"menu_name":"","all_items":"","add_new":"","add_new_item":"","edit_item":"","new_item":"","view_item":"","view_items":"","search_items":"","not_found":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""},"entertainment":{"name":"entertainment","label":"Entertainment","singular_label":"Entertainment","description":"","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"true","has_archive_string":"","exclude_from_search":"false","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"","show_in_menu":"true","show_in_menu_string":"","menu_icon":"dashicons-format-audio","supports":["title","thumbnail","custom-fields"],"taxonomies":["category"],"labels":{"menu_name":"","all_items":"","add_new":"","add_new_item":"","edit_item":"","new_item":"","view_item":"","view_items":"","search_items":"","not_found":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""},"press_releases":{"name":"press_releases","label":"Press Releases","singular_label":"Press Release","description":"","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"true","has_archive_string":"","exclude_from_search":"false","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"","show_in_menu":"true","show_in_menu_string":"","menu_icon":"dashicons-media-document","supports":["title","editor","thumbnail","custom-fields"],"taxonomies":[],"labels":{"menu_name":"","all_items":"","add_new":"","add_new_item":"","edit_item":"","new_item":"","view_item":"","view_items":"","search_items":"","not_found":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""},"in_the_news":{"name":"in_the_news","label":"In the News","singular_label":"In the News","description":"","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"true","has_archive_string":"","exclude_from_search":"false","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"","show_in_menu":"true","show_in_menu_string":"","menu_icon":"dashicons-welcome-widgets-menus","supports":["title","editor","thumbnail","custom-fields"],"taxonomies":[],"labels":{"menu_name":"","all_items":"","add_new":"","add_new_item":"","edit_item":"","new_item":"","view_item":"","view_items":"","search_items":"","not_found":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""},"coupons":{"name":"coupons","label":"Coupons","singular_label":"Coupon","description":"","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"true","has_archive_string":"","exclude_from_search":"false","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"","show_in_menu":"true","show_in_menu_string":"","menu_icon":"dashicons-tickets","supports":["title","thumbnail","excerpt","custom-fields"],"taxonomies":["category"],"labels":{"menu_name":"","all_items":"","add_new":"","add_new_item":"","edit_item":"","new_item":"","view_item":"","view_items":"","search_items":"","not_found":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""},"dine-drink":{"name":"dine-drink","label":"Dine and Drink","singular_label":"Dine and Drink","description":"","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"true","has_archive_string":"","exclude_from_search":"false","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"","show_in_menu":"true","show_in_menu_string":"","menu_icon":"dashicons-food","supports":["title","thumbnail","custom-fields"],"taxonomies":["category"],"labels":{"menu_name":"","all_items":"","add_new":"","add_new_item":"","edit_item":"","new_item":"","view_item":"","view_items":"","search_items":"","not_found":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""},"sales-promotions":{"name":"sales-promotions","label":"Sales and Promotions","singular_label":"Sales and Promotions","description":"","public":"true","publicly_queryable":"true","show_ui":"true","show_in_nav_menus":"true","delete_with_user":"false","show_in_rest":"true","rest_base":"","rest_controller_class":"","has_archive":"true","has_archive_string":"","exclude_from_search":"false","capability_type":"post","hierarchical":"false","rewrite":"true","rewrite_slug":"","rewrite_withfront":"true","query_var":"true","query_var_slug":"","menu_position":"","show_in_menu":"true","show_in_menu_string":"","menu_icon":"dashicons-tickets-alt","supports":["title","thumbnail","custom-fields"],"taxonomies":["category"],"labels":{"menu_name":"","all_items":"","add_new":"","add_new_item":"","edit_item":"","new_item":"","view_item":"","view_items":"","search_items":"","not_found":"","not_found_in_trash":"","parent_item_colon":"","featured_image":"","set_featured_image":"","remove_featured_image":"","use_featured_image":"","archives":"","insert_into_item":"","uploaded_to_this_item":"","filter_items_list":"","items_list_navigation":"","items_list":"","attributes":"","name_admin_bar":"","item_published":"","item_published_privately":"","item_reverted_to_draft":"","item_scheduled":"","item_updated":""},"custom_supports":""}}
+
+Error: Could not get 'cptui_taxonomies' option. Does it exist?
+
+== CPT UI generated code (its own Get Code output)
+/* --- post types --- */
+function cptui_register_my_cpts() {
+
+	/**
+	 * Post Type: Jobs.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Jobs", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Job", "custom-post-type-ui" ),
+		"menu_name" => esc_html__( "Jobs", "custom-post-type-ui" ),
+		"all_items" => esc_html__( "All Jobs", "custom-post-type-ui" ),
+		"add_new_item" => esc_html__( "Add New Job", "custom-post-type-ui" ),
+		"edit_item" => esc_html__( "Edit Job", "custom-post-type-ui" ),
+		"new_item" => esc_html__( "New Job", "custom-post-type-ui" ),
+		"view_item" => esc_html__( "View Job", "custom-post-type-ui" ),
+		"view_items" => esc_html__( "View Jobs", "custom-post-type-ui" ),
+		"search_items" => esc_html__( "Search Jobs", "custom-post-type-ui" ),
+		"not_found" => esc_html__( "No Jobs Found", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Jobs", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => &quot;post&quot;,
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ &quot;slug&quot; =&gt; &quot;jobs&quot;, &quot;with_front&quot; =&gt; true ],
+		"query_var" => true,
+		"menu_position" => 6,
+		"supports" => [ &quot;title&quot;, &quot;custom-fields&quot; ],
+		"taxonomies" => [ &quot;category&quot; ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "jobs", $args );
+
+	/**
+	 * Post Type: Shops.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Shops", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Shop", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Shops", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => &quot;post&quot;,
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ &quot;slug&quot; =&gt; &quot;shops&quot;, &quot;with_front&quot; =&gt; true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-cart",
+		"supports" => [ &quot;title&quot;, &quot;thumbnail&quot;, &quot;custom-fields&quot; ],
+		"taxonomies" => [ &quot;category&quot; ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "shops", $args );
+
+	/**
+	 * Post Type: Entertainment.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Entertainment", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Entertainment", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Entertainment", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => &quot;post&quot;,
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ &quot;slug&quot; =&gt; &quot;entertainment&quot;, &quot;with_front&quot; =&gt; true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-format-audio",
+		"supports" => [ &quot;title&quot;, &quot;thumbnail&quot;, &quot;custom-fields&quot; ],
+		"taxonomies" => [ &quot;category&quot; ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "entertainment", $args );
+
+	/**
+	 * Post Type: Press Releases.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Press Releases", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Press Release", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Press Releases", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => &quot;post&quot;,
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ &quot;slug&quot; =&gt; &quot;press_releases&quot;, &quot;with_front&quot; =&gt; true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-media-document",
+		"supports" => [ &quot;title&quot;, &quot;editor&quot;, &quot;thumbnail&quot;, &quot;custom-fields&quot; ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "press_releases", $args );
+
+	/**
+	 * Post Type: In the News.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "In the News", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "In the News", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "In the News", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => &quot;post&quot;,
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ &quot;slug&quot; =&gt; &quot;in_the_news&quot;, &quot;with_front&quot; =&gt; true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-welcome-widgets-menus",
+		"supports" => [ &quot;title&quot;, &quot;editor&quot;, &quot;thumbnail&quot;, &quot;custom-fields&quot; ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "in_the_news", $args );
+
+	/**
+	 * Post Type: Coupons.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Coupons", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Coupon", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Coupons", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => &quot;post&quot;,
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ &quot;slug&quot; =&gt; &quot;coupons&quot;, &quot;with_front&quot; =&gt; true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-tickets",
+		"supports" => [ &quot;title&quot;, &quot;thumbnail&quot;, &quot;excerpt&quot;, &quot;custom-fields&quot; ],
+		"taxonomies" => [ &quot;category&quot; ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "coupons", $args );
+
+	/**
+	 * Post Type: Dine and Drink.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Dine and Drink", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Dine and Drink", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Dine and Drink", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => &quot;post&quot;,
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ &quot;slug&quot; =&gt; &quot;dine-drink&quot;, &quot;with_front&quot; =&gt; true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-food",
+		"supports" => [ &quot;title&quot;, &quot;thumbnail&quot;, &quot;custom-fields&quot; ],
+		"taxonomies" => [ &quot;category&quot; ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "dine-drink", $args );
+
+	/**
+	 * Post Type: Sales and Promotions.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "Sales and Promotions", "custom-post-type-ui" ),
+		"singular_name" => esc_html__( "Sales and Promotions", "custom-post-type-ui" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "Sales and Promotions", "custom-post-type-ui" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => &quot;post&quot;,
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => true,
+		"rewrite" => [ &quot;slug&quot; =&gt; &quot;sales-promotions&quot;, &quot;with_front&quot; =&gt; true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-tickets-alt",
+		"supports" => [ &quot;title&quot;, &quot;thumbnail&quot;, &quot;custom-fields&quot; ],
+		"taxonomies" => [ &quot;category&quot; ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "sales-promotions", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts' );
+/* --- taxonomies --- */
+(none)

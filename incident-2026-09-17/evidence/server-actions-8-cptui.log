@@ -1,0 +1,129 @@
+=== ACTION LOG 8: replace Custom Post Type UI with child-theme includes; split functions.php (UTC) ===
+[2026-09-17 20:09:31] local repo child theme files:
+953b9fa68469d8b8bfc5bde02ece39d2  bb-theme-child/functions.php
+861b04ea7a6413440921bd74eda05692  bb-theme-child/inc/gravity-forms-coupon-counter.php
+cf8dc0113b0e62439e390fd75a7bad51  bb-theme-child/inc/theme-options.php
+e461a458b639359445448382194bdf31  bb-theme-child/inc/acf-readonly-fields.php
+e4fb33bee1a640845be8535e50ed8a46  bb-theme-child/inc/post-types.php
+a134a747b331272ac5618c9751c6a20f  bb-theme-child/inc/page-taxonomies.php
+16e65a561089e13275a95075952979ba  bb-theme-child/classes/class-fl-child-theme.php
+backup:
+[upload] extracted
+[2026-09-17 20:10:38] server child theme files now:
+e4fb33bee1a640845be8535e50ed8a46  wp-content/themes/bb-theme-child/inc/post-types.php
+cf8dc0113b0e62439e390fd75a7bad51  wp-content/themes/bb-theme-child/inc/theme-options.php
+a134a747b331272ac5618c9751c6a20f  wp-content/themes/bb-theme-child/inc/page-taxonomies.php
+861b04ea7a6413440921bd74eda05692  wp-content/themes/bb-theme-child/inc/gravity-forms-coupon-counter.php
+e461a458b639359445448382194bdf31  wp-content/themes/bb-theme-child/inc/acf-readonly-fields.php
+16e65a561089e13275a95075952979ba  wp-content/themes/bb-theme-child/classes/class-fl-child-theme.php
+953b9fa68469d8b8bfc5bde02ece39d2  wp-content/themes/bb-theme-child/functions.php
+[2026-09-17 20:10:38] lint:
+No syntax errors detected in wp-content/themes/bb-theme-child/inc/post-types.php
+No syntax errors detected in wp-content/themes/bb-theme-child/inc/theme-options.php
+No syntax errors detected in wp-content/themes/bb-theme-child/inc/page-taxonomies.php
+No syntax errors detected in wp-content/themes/bb-theme-child/inc/gravity-forms-coupon-counter.php
+No syntax errors detected in wp-content/themes/bb-theme-child/inc/acf-readonly-fields.php
+No syntax errors detected in wp-content/themes/bb-theme-child/classes/class-fl-child-theme.php
+No syntax errors detected in wp-content/themes/bb-theme-child/functions.php
+[2026-09-17 20:10:39] site with BOTH child includes and CPT UI active: home 200 | shops archive 200
+[2026-09-17 20:10:41] sample single URLs per CPT (published):
+  jobs: https://www.miraclemileshopslv.com/?p=5670
+  shops: https://www.miraclemileshopslv.com/?p=6331
+  entertainment: https://www.miraclemileshopslv.com/?p=5303
+  press_releases: https://www.miraclemileshopslv.com/?p=6327
+  in_the_news: https://www.miraclemileshopslv.com/?p=6055
+  coupons: https://www.miraclemileshopslv.com/?p=6287
+  dine-drink: https://www.miraclemileshopslv.com/?p=5825
+  sales-promotions: https://www.miraclemileshopslv.com/?p=6337
+[2026-09-17 20:11:36] BEFORE (CPT UI active) URL checks:
+  301 https://www.miraclemileshopslv.com/?p=5670
+  301 https://www.miraclemileshopslv.com/?p=6331
+  301 https://www.miraclemileshopslv.com/?p=5303
+  301 https://www.miraclemileshopslv.com/?p=6327
+  301 https://www.miraclemileshopslv.com/?p=6055
+  301 https://www.miraclemileshopslv.com/?p=6287
+  301 https://www.miraclemileshopslv.com/?p=5825
+  301 https://www.miraclemileshopslv.com/?p=6337
+  200 /shops/ (archive)
+  301 /entertainment/ (archive)
+  301 /press-releases/ (archive)
+  301 /in-the-news/ (archive)
+  200 /coupons/ (archive)
+  301 /dine-drink/ (archive)
+  200 /sales-promotions/ (archive)
+  200 REST wp/v2/shops
+[2026-09-17 20:11:45] wp plugin deactivate custom-post-type-ui
+Success: Deactivated 1 of 1 plugins.
+[2026-09-17 20:12:09] purge caches
+purgedSuccess: The cache was flushed.
+[2026-09-17 20:12:45] AFTER (CPT UI inactive) URL checks:
+  404 https://www.miraclemileshopslv.com/?p=5670
+  404 https://www.miraclemileshopslv.com/?p=6331
+  404 https://www.miraclemileshopslv.com/?p=5303
+  404 https://www.miraclemileshopslv.com/?p=6327
+  404 https://www.miraclemileshopslv.com/?p=6055
+  404 https://www.miraclemileshopslv.com/?p=6287
+  404 https://www.miraclemileshopslv.com/?p=5825
+  404 https://www.miraclemileshopslv.com/?p=6337
+  200 /shops/ (archive)
+  200 /entertainment/ (archive)
+  301 /press-releases/ (archive)
+  301 /in-the-news/ (archive)
+  200 /coupons/ (archive)
+  200 /dine-drink/ (archive)
+  200 /sales-promotions/ (archive)
+  200 REST wp/v2/shops | home 200
+[2026-09-17 20:14:39] test note: the AFTER ?p= URL checks appended '?v=' to URLs that already had a query string (malformed p value) -> those 404s are a test defect; archives/REST/home were 200. Re-test follows below with '&v='.
+[2026-09-17 20:14:39] diff showed CPT UI computes extra labels at runtime that its Get Code export omits. Reactivating CPT UI temporarily to capture its exact register_post_type() args.
+Success: Activated 1 of 1 plugins.
+[upload] inc/post-types.php replaced: 0114b701fb0011e5d3913c3542db6753 bb-theme-child/inc/post-types.php
+[2026-09-17 20:19:06] lint: No syntax errors detected in wp-content/themes/bb-theme-child/inc/post-types.php
+[2026-09-17 20:19:06] wp plugin deactivate custom-post-type-ui
+Success: Deactivated 1 of 1 plugins.
+[2026-09-17 20:19:32] purge caches
+purgedSuccess: The cache was flushed.
+[2026-09-17 20:20:09] URL checks with CPT UI inactive (corrected cache-buster):
+  200 /shops/ (archive)
+  200 /entertainment/ (archive)
+  301 /press-releases/ (archive)
+  301 /in-the-news/ (archive)
+  200 /coupons/ (archive)
+  200 /dine-drink/ (archive)
+  200 /sales-promotions/ (archive)
+  200 REST wp/v2/shops | home 200
+[2026-09-17 20:20:17] follow one redirect to the pretty permalink: 000 http://&v=31965/
+(diff complete: 0 differences across 14 post types and 10 taxonomies)
+[2026-09-17 20:21:42] single-item URLs (pretty permalinks, CPT UI inactive, child theme registering):
+  200 jobs #5670 https://www.miraclemileshopslv.com/jobs/lovisa/
+  200 shops #6331 https://www.miraclemileshopslv.com/shops/vegas/
+  200 entertainment #5303 https://www.miraclemileshopslv.com/entertainment/an-r-rated-magic-show/
+  200 press_releases #6327 https://www.miraclemileshopslv.com/press_releases/miracle-mile-shops-teams-up-with-losvgk-for-limited-edition-tote-giveaway/
+  200 in_the_news #6055 https://www.miraclemileshopslv.com/in_the_news/kentucky-derby-fashion-inspiration-from-miracle-mile-shops/
+  200 coupons #6287 https://www.miraclemileshopslv.com/coupons/perfumania/
+  200 dine-drink #5825 https://www.miraclemileshopslv.com/dine-drink/teamo-boba-dessert/
+  200 sales-promotions #6337 https://www.miraclemileshopslv.com/sales-promotions/acium-up-to-40-off-sale/
+[2026-09-17 20:25:38] admin sanity: post types visible in admin menu = acf-taxonomy,acf-post-type,acf-ui-options-page,acf-field-group,ctct_forms,ctct_lists,product_spot,bppiv-image-viewer,virtual_tour,jobs,shops,entertainment,press_releases,in_the_news,coupons,dine-drink,sales-promotions
+[2026-09-17 20:25:50] single-item failures: 0 (0 = all 200)
+[2026-09-17 20:25:50] wp plugin delete custom-post-type-ui
+Success: Deleted 1 of 1 plugins.
+[2026-09-17 20:26:05] CPT UI options left in DB (kept as a fallback record; harmless): cptui_new_install,cptui_post_types
+[2026-09-17 20:26:06] flush rewrite rules + purge caches
+Success: Rewrite rules flushed.
+purgedSuccess: The cache was flushed.
+[2026-09-17 20:26:43] FINAL checks (plugin deleted):
+  200 jobs https://www.miraclemileshopslv.com/jobs/lovisa/
+  200 shops https://www.miraclemileshopslv.com/shops/vegas/
+  200 entertainment https://www.miraclemileshopslv.com/entertainment/an-r-rated-magic-show/
+  200 press_releases https://www.miraclemileshopslv.com/press_releases/miracle-mile-shops-teams-up-with-losvgk-for-limited-edition-tote-giveaway/
+  200 in_the_news https://www.miraclemileshopslv.com/in_the_news/kentucky-derby-fashion-inspiration-from-miracle-mile-shops/
+  200 coupons https://www.miraclemileshopslv.com/coupons/perfumania/
+  200 dine-drink https://www.miraclemileshopslv.com/dine-drink/teamo-boba-dessert/
+  200 sales-promotions https://www.miraclemileshopslv.com/sales-promotions/acium-up-to-40-off-sale/
+  200 /shops/ (archive)
+  200 /entertainment/ (archive)
+  200 /coupons/ (archive)
+  200 /dine-drink/ (archive)
+  200 /sales-promotions/ (archive)
+  200 REST wp/v2/shops | home 200 | dine-and-drink page 200
+[2026-09-17 20:30:13] plugin dir exists? no | active plugin count: 20
+=== END ACTION LOG 8 ===
