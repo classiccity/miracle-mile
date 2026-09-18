@@ -47,3 +47,6 @@ saveConfig returned NULL
 [2026-09-17 20:02:37] site check: home 200 | dine-and-drink 200 | wp-login 200 | coupon page 200
 === END ACTION LOG 7 ===
 [2026-09-17 20:03:37] WAF enforcement proof — last Wordfence hits (look for action blocked:waf on the wfprobe URL):
+[2026-09-18 00:56:17] start a fresh Wordfence scan so issues 69,70,72,74 (deleted files/plugin) auto-clear
+scan start requested
+[2026-09-18 00:56:51] wf_scanRunning=1789692990 | latest status: Analyzed 20600 files containing 1.24 GB of data so far
