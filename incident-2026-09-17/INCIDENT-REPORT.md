@@ -205,8 +205,28 @@ Tests with the plugin deleted (all in `evidence/server-actions-8-cptui.log`): on
 |---|---|
 | 17:52:35 | Restored `wp-content/themes/bb-theme/functions.php` to stock (3,901 B, 101 lines) |
 | 17:53:53 | Created administrator user 15 `access@classiccityconsulting.com` via the WPE portal |
-| 18:16, 18:26 | Updated Beaver Builder Plugin 2.11.0.4 → 2.11.1 |
+| 18:16:27 | Updated Beaver Builder Plugin 2.11.0.4 → 2.11.1 |
+| 18:26:01 | Updated Gravity Forms 3.1.1 → 3.1.2 |
 | 18:43:12 | Deleted user 10 `wpengine` (bitbucket@wpengine.com, administrator) |
+| 19:00:37 | Deleted user 7 `classiccity` (access@classiccity.com, administrator; superseded by user 15) |
+| 19:40:43 | Deactivated Smash Balloon Instagram Feed, Social Feed Gallery (Insta Gallery), WordPress Importer, WP All Export, WP All Import, WP Engine Site Migration |
+| 20:34:26 | Updated Google Language Translator 6.0.20 → 7.0.1 (the version Wordfence had flagged) |
+| 00:49:30 (Sep 18) | Deactivated Panorama (after the usage audit found it on one leasing page, "Views", page 182) |
+| 00:50:03–00:50:13 (Sep 18) | Deleted ten plugins: Advanced Custom Fields (free), Akismet, Genesis Blocks, Panorama, Smash Balloon Instagram Feed, Social Feed Gallery, WordPress Importer, WP All Export, WP All Import, WP Engine Site Migration |
+
+Side effect to note: the "Views" page (`/find-your-element/views/`) still contains `[panorama id=242]` and `[panorama id=247]`, which now render as literal text. The page needs an edit (static images or removal of the two shortcodes).
+
+### 4.4b Site inventory at the end of remediation (2026-09-18 00:52 UTC)
+
+Active plugins (19, down from 30 active + 3 inactive at the start of the day): Advanced Custom Fields PRO 6.8.10, Beaver Builder Plugin 2.11.1, Beaver Themer 1.6, Beaver Builder PowerPack 2.42.3, Ultimate Addons for Beaver Builder 1.37.7, Constant Contact Forms 2.21.0, Enable Media Replace 4.2.2, EWWW Image Optimizer 8.7.7, FlowPaper Lite 2.0.8, Google Language Translator 7.0.1, Gravity Forms 3.1.2, Header Footer Code Manager 1.1.46, Klaviyo 3.8.3, Meta Pixel 5.2.2, Redirection 5.10.0, Wordfence 9.0.1, WP Security Audit Log 5.6.6, WP Engine Smart Plugin Manager 6.1.8, Yoast SEO 28.5. Must-use: the six WP Engine platform plugins only.
+
+Removed today (13): the `asset-cache` malware mu-plugin, Create And Assign Categories For Pages, Custom Post Type UI (both replaced by child-theme code), and the ten above.
+
+Themes: bb-theme-child (active), bb-theme 1.7.20 (parent), twentytwentyfive 1.5 (WordPress fallback, inactive), genesis-block-theme 1.0.0 (inactive, still to delete).
+
+Users (4, all administrators): access@classiccityconsulting.com (15), Laura Lake (2), samson (11), walbert@mms-lv.com (13). All have Wordfence 2FA enrolled; all passwords invalidated at 19:33 UTC.
+
+Usage audit behind the plugin decisions (`evidence/plugin-usage-audit.json`, 146 published layouts walked): PowerPack modules on 26 live pages (Content Grid on 21), Ultimate Addons on 17 (Info Box on 13), Beaver Themer supplies the site header, footer, leasing header/footer and the single templates for shops, restaurants, entertainment, promotions and blog posts. FlowPaper: zero shortcodes (the PDF flipbooks are hosted iframes). Neither Instagram plugin rendered anywhere.
 
 ### 4.5 Changes made to this laptop (not the site)
 
@@ -232,7 +252,7 @@ Ordered by urgency.
 4. **Ask WP Engine support for logs** (they are not readable from SSH): SFTP/SSH auth logs for 2026-09-17 14:50–17:10 UTC, web access logs for 2026-09-17 14:30–17:30 UTC, and for 2026-07-29 07:00–08:00 and 18:30–19:00 UTC. The 15:00 mu-plugin write and the ~17:04 theme write left no trace in WordPress; only the host's logs can show the channel.
 5. ~~Wordfence~~ — done (changes #25–26 plus Chris's UI changes): WAF Enabled and Protecting, plugin/theme/outside-WordPress scans on, 3-failure lockout, invalid usernames locked, full scan clean.
 6. **Replace the Sucuri-touched premium plugin files from pristine copies:** `bbpowerpack` (five files dated 2026-08-15 04:12), plus re-install `header-footer-code-manager` and `wp-all-export` from wordpress.org so checksums match again.
-7. **Remove attack surface:** delete inactive plugins (Advanced Custom Fields free, Akismet, Genesis Blocks) and the inactive Genesis Block Theme; keep Twenty Twenty-Five as the WordPress fallback. Update Google Language Translator (6.0.20 → 7.0.1, flagged by Wordfence). ~~Replace the abandoned "Create and Assign Categories for Pages" plugin~~ (done, change #19–20). Both Instagram plugins (Insta Gallery, Instagram Feed) render on no live page, widget or template part and can be deleted; WP All Import/Export (last used 2022) and WordPress Importer likewise. Disable WP Engine Site Migration's remote connection or regenerate its key.
+7. **Remove attack surface:** ~~delete inactive plugins (ACF free, Akismet, Genesis Blocks)~~, ~~update Google Language Translator~~, ~~replace the page-category plugin~~, ~~delete both Instagram plugins, WP All Import/Export, WordPress Importer, WP Engine Site Migration, Panorama~~ — all done by Chris 2026-09-17/18 (section 4.4). Still open: delete the inactive Genesis Block Theme (keep Twenty Twenty-Five as the WordPress fallback); delete FlowPaper Lite (zero shortcodes in use); edit the "Views" leasing page to remove the two dead `[panorama]` shortcodes.
 8. **Client notification decision:** the attacker admin account opened the Gravity Forms "Coupon Book Access" admin (≈16,150 entries of subscriber PII) on 2026-07-29, and the September script harvested visitors' cookies and storage for ~3 hours. Miracle Mile Shops should decide whether either rises to a notification obligation.
 9. **Confirm with the client:** was "dprather" ever a user (a botnet ran a targeted attack on that username on 2026-08-20)? Is the "Jules" chatbot (chat.satis.fi, HFCM snippets 4–5) theirs?
 10. After the above, delete `.sucuriquarantine/`, `uploads/wp-file-manager-pro/`, and consider `DISALLOW_FILE_EDIT` in `wp-config.php`.

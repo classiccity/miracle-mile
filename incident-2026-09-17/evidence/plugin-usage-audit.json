@@ -1,0 +1,278 @@
+{
+    "posts_with_builder": 146,
+    "modules_by_plugin": {
+        "bb-plugin": {
+            "accordion": {
+                "instances": 15,
+                "sample": [
+                    "page: Mall Directory",
+                    "page: Shop",
+                    "page: Advertising"
+                ]
+            },
+            "button": {
+                "instances": 13,
+                "sample": [
+                    "fl-builder-template: Deals",
+                    "page: Home",
+                    "page: Save Wifi"
+                ]
+            },
+            "content-slider": {
+                "instances": 1,
+                "sample": [
+                    "fl-theme-layout: Header"
+                ]
+            },
+            "heading": {
+                "instances": 98,
+                "sample": [
+                    "page: Mall Directory",
+                    "page: Shop",
+                    "fl-builder-template: Sign Up"
+                ]
+            },
+            "html": {
+                "instances": 12,
+                "sample": [
+                    "page: Mall Directory",
+                    "fl-theme-layout: Header",
+                    "fl-theme-layout: Footer"
+                ]
+            },
+            "icon": {
+                "instances": 6,
+                "sample": [
+                    "fl-theme-layout: Footer",
+                    "fl-theme-layout: Leasing Footer",
+                    "page: Leasing Brochure"
+                ]
+            },
+            "icon-group": {
+                "instances": 4,
+                "sample": [
+                    "fl-theme-layout: Header",
+                    "fl-theme-layout: Footer",
+                    "fl-builder-template: Icons"
+                ]
+            },
+            "menu": {
+                "instances": 3,
+                "sample": [
+                    "fl-theme-layout: Header",
+                    "fl-theme-layout: Footer",
+                    "fl-theme-layout: Leasing Header"
+                ]
+            },
+            "photo": {
+                "instances": 48,
+                "sample": [
+                    "fl-theme-layout: Header",
+                    "fl-theme-layout: Footer",
+                    "fl-builder-template: Internal"
+                ]
+            },
+            "post-grid": {
+                "instances": 5,
+                "sample": [
+                    "page: Employment",
+                    "page: Press Releases",
+                    "page: In The News"
+                ]
+            },
+            "rich-text": {
+                "instances": 80,
+                "sample": [
+                    "page: Mall Directory",
+                    "fl-theme-layout: Header",
+                    "fl-theme-layout: Footer"
+                ]
+            },
+            "separator": {
+                "instances": 8,
+                "sample": [
+                    "fl-builder-template: Store Pages",
+                    "fl-builder-template: Shops - Main Section",
+                    "fl-theme-layout: Shops"
+                ]
+            }
+        },
+        "bbpowerpack": {
+            "pp-content-grid": {
+                "instances": 21,
+                "sample": [
+                    "page: Shop",
+                    "fl-builder-template: Internal",
+                    "page: Blog"
+                ]
+            },
+            "pp-gallery": {
+                "instances": 1,
+                "sample": [
+                    "page: Renderings"
+                ]
+            },
+            "pp-hover-cards": {
+                "instances": 1,
+                "sample": [
+                    "page: Home"
+                ]
+            },
+            "pp-logos-grid": {
+                "instances": 4,
+                "sample": [
+                    "page: Home",
+                    "page: F1 Las Vegas 2024",
+                    "fl-builder-template: Logo Slider - Single"
+                ]
+            }
+        },
+        "bb-ultimate-addon": {
+            "blog-posts": {
+                "instances": 1,
+                "sample": [
+                    "page: Sales and Promotions"
+                ]
+            },
+            "dual-color-heading": {
+                "instances": 2,
+                "sample": [
+                    "page: Home",
+                    "fl-builder-template: Homepage Temp Get Some Banner"
+                ]
+            },
+            "info-box": {
+                "instances": 13,
+                "sample": [
+                    "page: Save Wifi",
+                    "fl-builder-template: step one coupon book",
+                    "fl-builder-template: step two coupon book"
+                ]
+            },
+            "uabb-gravity-form": {
+                "instances": 2,
+                "sample": [
+                    "page: Filming Inquiries",
+                    "page: Deals"
+                ]
+            }
+        },
+        "bb-theme-builder": {
+            "fl-post-content": {
+                "instances": 1,
+                "sample": [
+                    "fl-theme-layout: Individual Blog"
+                ]
+            },
+            "fl-post-info": {
+                "instances": 1,
+                "sample": [
+                    "fl-theme-layout: Individual Blog"
+                ]
+            },
+            "fl-post-navigation": {
+                "instances": 1,
+                "sample": [
+                    "fl-theme-layout: Individual Blog"
+                ]
+            }
+        }
+    },
+    "posts_per_plugin": {
+        "bb-plugin": 134,
+        "bbpowerpack": 26,
+        "bb-ultimate-addon": 17,
+        "bb-theme-builder": 1
+    },
+    "shortcodes": {
+        "[flipbook": {
+            "posts": 0,
+            "where": []
+        },
+        "[flowpaper": {
+            "posts": 0,
+            "where": []
+        },
+        "[panorama": {
+            "posts": 1,
+            "where": [
+                "page: Views (content)"
+            ]
+        },
+        "[pp_": {
+            "posts": 0,
+            "where": []
+        },
+        "[uabb": {
+            "posts": 1,
+            "where": [
+                "page: Tattoo Promo 2026"
+            ]
+        }
+    },
+    "themer_layouts": [
+        [
+            "88",
+            "publish",
+            "footer",
+            "Footer",
+            "a:1:{i:0;s:12:\"general:site\";}"
+        ],
+        [
+            "214",
+            "publish",
+            "footer",
+            "Leasing Footer",
+            "a:5:{i:0;s:13:\"post:page:188\";i:1;s:13:\"post:page:186\";i:2;s:13:\"post:page:180\";"
+        ],
+        [
+            "85",
+            "publish",
+            "header",
+            "Header",
+            "a:1:{i:0;s:12:\"general:site\";}"
+        ],
+        [
+            "203",
+            "publish",
+            "header",
+            "Leasing Header",
+            "a:5:{i:0;s:13:\"post:page:180\";i:1;s:13:\"post:page:188\";i:2;s:13:\"post:page:186\";"
+        ],
+        [
+            "862",
+            "publish",
+            "singular",
+            "Shops",
+            "a:1:{i:0;s:10:\"post:shops\";}"
+        ],
+        [
+            "888",
+            "publish",
+            "singular",
+            "Restaurants",
+            "a:1:{i:0;s:15:\"post:dine-drink\";}"
+        ],
+        [
+            "987",
+            "publish",
+            "singular",
+            "Entertainment",
+            "a:1:{i:0;s:18:\"post:entertainment\";}"
+        ],
+        [
+            "1036",
+            "publish",
+            "singular",
+            "Sales and Promotions",
+            "a:2:{i:0;s:25:\"post:sales_and_promotions\";i:1;s:21:\"post:sales-promotions\";}"
+        ],
+        [
+            "1307",
+            "publish",
+            "singular",
+            "Individual Blog",
+            "a:1:{i:0;s:9:\"post:post\";}"
+        ]
+    ]
+}

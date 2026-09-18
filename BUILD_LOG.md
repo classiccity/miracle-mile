@@ -1,5 +1,5 @@
 # Miracle Mile Shops — Build Log
-Version: 1.12
+Version: 1.13
 
 Repo for the miraclemileshopslv.com WordPress site (WP Engine install `miraclemilesh`).
 `themes/` holds the Beaver Builder parent and child themes as downloaded from the live site;
@@ -47,7 +47,13 @@ Site went down with a PHP parse error; cause was an attacker-injected "Asset Cac
   registration diff is zero; every CPT single, archive and REST endpoint 200 after deletion.
   Child theme layout is now: functions.php (loader) + inc/{theme-options, post-types,
   page-taxonomies, acf-readonly-fields, gravity-forms-coupon-counter}.php.
-- [ ] 1.13 Hardening follow-ups (owner: Chris) — 2FA for all admins, WPE portal
+- [x] 1.13 Plugin surface reduction (Chris, via wp-admin) — done 2026-09-18 00:50 UTC. Deleted ACF free,
+  Akismet, Genesis Blocks, Panorama, both Instagram plugins, WordPress Importer, WP All Import,
+  WP All Export, WPE Site Migration; updated Google Language Translator to 7.0.1. Decisions backed
+  by the layout usage audit (`incident-2026-09-17/evidence/plugin-usage-audit.json`). 19 active
+  plugins remain; inventory in INCIDENT-REPORT §4.4b.
+- [ ] 1.14 Remaining cleanup — delete Genesis Block Theme and FlowPaper Lite; remove the two dead
+  `[panorama]` shortcodes from the "Views" page (182); 2FA check for walbert; WPE portal audit.
   SFTP/SSH key review and log request, Wordfence WAF out of learning mode + checksum scans on,
   replace Sucuri-touched premium plugin files, remove inactive plugins/themes, client PII
   notification decision. Details in `INCIDENT-REPORT.md` §5.
