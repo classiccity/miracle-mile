@@ -1,0 +1,37 @@
+<p>Howdy!</p>
+
+<p>I wanted to get you the full rundown on yesterday while it's fresh. The short version: the site went down around 10 AM your time, and the reason it went down turned out to be the same reason we ended up spending the whole day on it. Someone had gotten into the site again.</p>
+
+<p><strong>What happened</strong></p>
+
+<p>An attacker added code to the site's theme and also dropped a hidden plugin into a folder WordPress loads automatically. Their theme edit had a typo in it, which is what crashed the site. Honestly, that typo did us a favor. The hidden plugin was working fine and would have kept running quietly.</p>
+
+<p>That hidden plugin did two things. It loaded a script on every page that tries to trick visitors with a fake "verify you are human" box and copies a malicious command to their clipboard (this is a known scam kit, and it also grabs browser cookies). And it had a secret login link that let the attacker sign in as an administrator without a password. That script was live on the site for about three hours yesterday morning, from roughly 8 AM to 11:50 AM your time.</p>
+
+<p>We also found leftovers from the July incident that the last cleanup missed: an attacker admin account named "adminuser" from July 29, traces of a file manager plugin they installed to upload their tools, and a robots.txt they had rewritten. The July account had opened the admin screen for the coupon book sign-up form, which holds about 16,000 entries. We found no sign that anything was exported, but I want you to have that fact rather than not.</p>
+
+<p><strong>What we did</strong></p>
+
+<p>✅ Removed the malicious code from the theme and deleted the hidden plugin. The site was back up at 10:52 AM your time and clean by 11:50 AM.<br>
+✅ Deleted the attacker's leftover account data, the file manager remnants, and the rewritten robots.txt.<br>
+✅ Invalidated every password on the site and rotated the site's security keys, which logged out every browser everywhere.<br>
+✅ Pointed the site's admin email at us instead of the previous developer's inbox (that inbox was still getting every security notice from WordPress, including a recovery link yesterday).<br>
+✅ Turned on the Wordfence firewall (it had been sitting in "learning mode" and blocking nothing), enabled the plugin and theme file scans that were switched off, and ran a full scan with everything on. It came back clean.<br>
+✅ Removed 13 plugins the site wasn't using, including two that had been abandoned by their authors, and cleared out the leftovers of the file manager tool the attacker had installed in July. Two small pieces of functionality moved into your theme's own code so they no longer depend on outside plugins. The site went from 31 installed plugins to 19.<br>
+✅ Wrote up every change with timestamps so we have a full record.</p>
+
+<p><strong>Your docket</strong></p>
+
+<p>1. Laura and Wendy, your old passwords no longer work. Go to the login page, click "Lost your password?", and set a new one. Laura, I saw you already did this. 🙌<br>
+2. Wendy, your two-factor code was set up back in August but never used. When you log in, you'll need the authenticator app entry for the site. If you don't have one, let me know and I'll reset it so you can enroll fresh.<br>
+3. The coupon form entries are your call. I don't think there's evidence of a breach of that data, but you know your obligations better than I do, and I'm glad to pull whatever detail you need.</p>
+
+<p><strong>My next steps</strong></p>
+
+<p>▫️ Opening a ticket with WP Engine to get their server logs, which is the only way to learn exactly how the files were written this time.<br>
+▫️ A second pass in a few days once Wordfence has run on its own schedule, to confirm nothing came back.<br>
+▫️ A short list of hardening items for the account itself (who has portal and file access), which I'll send separately.</p>
+
+<p>I'm sorry y'all had to go through this twice. The good news is the site is in a better place today than it was a month ago, and we now know a lot more about how they got in.</p>
+
+<p>✌🏻</p>
