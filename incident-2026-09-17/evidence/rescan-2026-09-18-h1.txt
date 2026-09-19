@@ -1,0 +1,26 @@
+Rescan 2026-09-18 (UTC) — H1 filesystem hot spots — Haiku subagent, read-only
+QA'd by main session: theme list corrected (agent truncated it), uploads PHP sizes verified (all 0 bytes).
+
+1. mu-plugins (top level): force-strong-passwords/, mu-plugin.php, slt-force-strong-passwords.php,
+   wpe-cache-plugin/ + .php, wpe-update-source-selector/ + .php, wpe-wp-sign-on-plugin/ + .php,
+   wpengine-common/, wpengine-security-auditor.php. Nothing else. Dir mtime Sep 17 18:48 (the cleanup).
+2. Site root / wp-content top level: no stray .php, no hidden entries beyond .htaccess, _wpeprivate,
+   .sucuriquarantine. wp-content PHP = index.php, advanced-cache.php, object-cache.php only.
+3. Marker grep (cfx_, caapman, vilialobos, 194.59.30.132, X-Proxy-Auth, asset-cache, Xk9mWq2Lp, nutmann):
+   0 files. Obfuscation grep (eval(base64_decode, gzinflate(base64_decode, str_rot13, FilesMan, b374k,
+   all_plugins filter): 0 files. Cyrillic in PHP: 0 files.
+4. bb-theme/functions.php: 101 lines, md5 5ab5cc36cd8bf72b7d016c6e3937b74a, mtime 2026-09-17 17:52:35,
+   one <?php, ends at FLThemeCompat::init(). bb-theme-child/functions.php: 30 lines,
+   md5 953b9fa68469d8b8bfc5bde02ece39d2, mtime 2026-09-17 20:08:51, one <?php, loader only.
+   header.php 86 lines md5 c38bf883515f321581cea9c3035bfb1f; footer.php 76 lines md5 df7044a600701037cbdbf36b998154e2.
+   Theme PHP modified today: none.
+5. PHP under uploads/languages: 16 files, all index.php, all 0 bytes (verified). No dotfiles beyond
+   .htaccess. .htaccess contents: wp-migrate-db (Options -Indexes / Deny from all), insta-gallery-logs
+   (Deny from all), uploads root (<Files *.php> deny from all). No handlers, no prepend.
+6. Files written today outside uploads/logs/cache: apple-touch-icon*.png, favicon.ico, advanced-cache.php
+   (all 0 bytes), _wpeprivate/config.json, object-cache.php — all at 14:22 UTC, WP Engine platform refresh.
+7. wp core verify-checksums: Success. Plugins: 27 rows = 19 plugins + 6 must-use + 2 drop-ins.
+   Themes on disk: bb-theme-child (active), bb-theme (parent), genesis-block-theme (inactive),
+   twentytwentyfive (inactive).
+
+Verdict: clean.

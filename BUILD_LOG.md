@@ -1,5 +1,5 @@
 # Miracle Mile Shops — Build Log
-Version: 1.13
+Version: 1.15
 
 Repo for the miraclemileshopslv.com WordPress site (WP Engine install `miraclemilesh`).
 `themes/` holds the Beaver Builder parent and child themes as downloaded from the live site;
@@ -52,6 +52,9 @@ Site went down with a PHP parse error; cause was an attacker-injected "Asset Cac
   WP All Export, WPE Site Migration; updated Google Language Translator to 7.0.1. Decisions backed
   by the layout usage audit (`incident-2026-09-17/evidence/plugin-usage-audit.json`). 19 active
   plugins remain; inventory in INCIDENT-REPORT §4.4b.
+- [x] 1.15 Day-1 rescan (Round 1 of /site-scan) — done 2026-09-18. Two Haiku sweeps + live-site check,
+  QA'd; clean. Board: `incident-2026-09-17/scan-log.md`; evidence `rescan-2026-09-18-h1/h2.txt`.
+  Next watch 09-20 and 09-24.
 - [ ] 1.14 Remaining cleanup — delete Genesis Block Theme and FlowPaper Lite; remove the two dead
   `[panorama]` shortcodes from the "Views" page (182); 2FA check for walbert; WPE portal audit.
   SFTP/SSH key review and log request, Wordfence WAF out of learning mode + checksum scans on,

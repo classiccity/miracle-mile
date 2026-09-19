@@ -1,0 +1,22 @@
+Rescan 2026-09-18 (UTC) — H2 accounts and settings — Haiku subagent, read-only
+QA'd by main session: recovery_keys is [] (agent misread the tail as "exists"); the 01:28 alert-6061
+email was "[Wordfence Alert] Problems found" to walbert@mms-lv.com from the scheduled scan (cron IP 34.133.165.105).
+
+1. Users: 2 Laura Lake, 11 samson, 13 walbert@mms-lv.com, 15 access@classiccityconsulting.com; all
+   administrator; no orphaned usermeta; no application passwords. Sessions: Laura 1 (2026-09-17 20:19,
+   65.153.132.218), access@ 2 (17:53 and 18:25, 73.82.6.104), samson 0, walbert 0.
+2. admin_email access@classiccityconsulting.com; users_can_register 0; default_role subscriber;
+   siteurl/home https://www.miraclemileshopslv.com; recovery_keys []; new_admin_email absent.
+3. Options with script/iframe/eval/base64/markers: only theme_mods_bb-theme-child (GTM + Klaviyo, known).
+4. Transients: none. 5. Cron: 34 hooks, all attributable (Wordfence, Yoast, core, WSAL, GF, Redirection, ACF).
+6. Posts modified since 2026-09-17 21:00: 3146 sales-promotions "Just in time for fall at Tommy Bahama!"
+   (Laura, 09-18 18:48), 3360 acf-field-group "Coupon Code Tracker" and 6345 acf-field "JusCollege"
+   (Laura, 09-17 23:58). Published content with non-embed script/iframe: 0.
+7. Postmeta with markers/atob/fromCharCode on published posts: 0.
+8. HFCM scripts changed since 09-17: none. External redirect targets: 0.
+9. Wordfence: WAF enabled, plugin+theme scans on, outside-scan on, max failures 3, scheduled scans on,
+   last scan ok, new issues 0, logins since 09-17 21:00: 0.
+10. WSAL since 09-17 21:00: 31 events — Laura content edits and views (65.153.132.218), access@ plugin
+    deactivation + 10 uninstalls at 09-18 00:49–00:50, one Wordfence alert email at 01:28.
+
+Verdict: clean; activity matches known owner/client actions.
